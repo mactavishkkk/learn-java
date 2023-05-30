@@ -1,6 +1,6 @@
 
 // Class
-import bulletin.Bulletin;
+import classes.bulletin.Bulletin;
 
 // Java
 import javax.swing.JOptionPane;

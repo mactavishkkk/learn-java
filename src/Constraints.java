@@ -1,4 +1,4 @@
-import bank.Bank;
+import classes.bank.Bank;
 
 public class Constraints {
 

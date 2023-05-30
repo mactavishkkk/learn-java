@@ -1,10 +1,10 @@
 
 // Class
-import collaborator.Collaborator;
-import collaborator.Horly;
-import collaborator.Monthly;
-import collaborator.Commissioned;
-import collaborator.BaseCommissioned;
+import classes.collaborator.Collaborator;
+import classes.collaborator.Horly;
+import classes.collaborator.Monthly;
+import classes.collaborator.Commissioned;
+import classes.collaborator.BaseCommissioned;
 
 public class Heritage {
 

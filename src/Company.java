@@ -1,14 +1,16 @@
 
 // Class
-import collaborator.Collaborator;
-import collaborator.Horly;
-import collaborator.Monthly;
-import collaborator.PayRoll;
-import collaborator.Commissioned;
+import classes.collaborator.Collaborator;
+import classes.collaborator.Horly;
+import classes.collaborator.Manager;
+import classes.collaborator.Monthly;
+import classes.collaborator.PayRoll;
+import classes.collaborator.Commissioned;
 
 import java.util.List;
+import java.util.Scanner;
 
-import collaborator.BaseCommissioned;
+import classes.collaborator.BaseCommissioned;
 
 public class Company {
 
@@ -30,7 +32,20 @@ public class Company {
                 baseComissionado,
                 new Monthly("Brennan Sims", "Engenharia", 15600));
 
-        PayRoll folha = new PayRoll(colaboradores);
-        folha.geraRelatorio();
+        Manager gerente = new Manager("Juliana", "Tecnologia", 20000, colaboradores);
+        gerente.setSenha("1234");
+
+        try (Scanner scanner = new Scanner(System.in)) {
+
+            System.out.print("Informe sua senha:\n> ");
+            String senha = scanner.next();
+
+            if (gerente.estaAutenticado(senha)) {
+                PayRoll folha = new PayRoll(gerente);
+                folha.geraRelatorio();
+            } else {
+                System.err.println("Falha ao autenticar colaborador");
+            }
+        }
     }
 }
